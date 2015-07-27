@@ -63,6 +63,10 @@ template <class T> class Vec3{
             return sqrt( (x*x) + (y*y) + (z*z));
         }
 
+        T lengthSq(){
+            return (x*x + y*y + z*z);
+        }
+
 
         void rotateYaw(T degAngle){
             T radAngle = degAngle*DEG_TO_RAD_FACTOR;
@@ -184,6 +188,16 @@ template <class T> class Vec3{
             else{
                 cout << "Vec3<T> / operation not allowed : scalar is equal to 0" << endl;
                 return Vec3();
+            }
+        }
+
+
+        bool operator != (Vec3<T> v2){
+            if (x != v2.x || y != v2.y || z != v2.z){
+                return true;
+            }
+            else{
+                return false;
             }
         }
 
