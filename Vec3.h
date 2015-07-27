@@ -201,6 +201,15 @@ template <class T> class Vec3{
             }
         }
 
+        bool operator == (Vec3<T> v2){
+            if(x==v2.x && y == v2.y && z == v2.z){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
         void print(){
             cout << endl;
             cout << "----------" << endl;
