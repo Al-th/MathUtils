@@ -71,7 +71,7 @@ template <class T> class Vec3{
         void rotateYaw(T degAngle){
             T radAngle = degAngle*DEG_TO_RAD_FACTOR;
 
-            Matrix<double> rotationMatrix(3,3);
+            Matrix<T> rotationMatrix(3,3);
             rotationMatrix.data[0][0] = cos(radAngle);
             rotationMatrix.data[0][1] = -sin(radAngle);
             rotationMatrix.data[1][0] = sin(radAngle);
@@ -84,7 +84,7 @@ template <class T> class Vec3{
         void rotatePitch(T degAngle){
             T radAngle = degAngle*DEG_TO_RAD_FACTOR;
 
-            Matrix<double> rotationMatrix(3,3);
+            Matrix<T> rotationMatrix(3,3);
             rotationMatrix.data[0][0] = cos(radAngle);
             rotationMatrix.data[0][2] = sin(radAngle);
             rotationMatrix.data[1][1] = 1;
@@ -97,7 +97,7 @@ template <class T> class Vec3{
         void rotateRoll(T degAngle){
             T radAngle = degAngle*DEG_TO_RAD_FACTOR;
 
-            Matrix<double> rotationMatrix(3,3);
+            Matrix<T> rotationMatrix(3,3);
             rotationMatrix.data[0][0] = 1;
             rotationMatrix.data[0][1] = cos(radAngle);
             rotationMatrix.data[1][2] = -sin(radAngle);

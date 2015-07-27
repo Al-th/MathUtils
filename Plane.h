@@ -29,6 +29,20 @@ template <class T> class Plane{
             return dist;
         }
 
+        Vec3<T> getProjectionOf(Vec3<T> p){
+            T dist = distanceFromPoint(p);
+
+            Vec3<T> projected;
+
+            projected.x = p.x;
+            projected.y = p.y;
+            projected.z = p.z;
+
+            projected -= normal*dist;
+
+            return projected;
+        }
+
         void print(){
             cout << endl;
             cout << "----------" << endl;
