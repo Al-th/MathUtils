@@ -35,7 +35,7 @@ template <class T> class Vec3{
 
         //vector operations
         void normalize(){
-            double magnitude = sqrt( (x*x) + (y*y) + (z*z) );
+            T magnitude = sqrt( (x*x) + (y*y) + (z*z) );
             if(magnitude!=0){
                 x /= magnitude;
                 y /= magnitude;
