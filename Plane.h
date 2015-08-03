@@ -44,7 +44,6 @@ template <class T> class Plane{
         }
 
         void print(){
-            cout << endl;
             cout << "----------" << endl;
             cout << "Plane of type " << typeid(T).name() << endl;
             cout << endl;

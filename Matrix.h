@@ -250,7 +250,6 @@ template <class T> class Matrix{
 
 
         void print(){
-            cout << endl;
             cout << "------------" << endl;
             cout << "Matrix " << m <<"x"<<n<< " of type " << typeid(T).name() << endl;
             cout << endl;

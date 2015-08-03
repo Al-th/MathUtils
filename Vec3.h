@@ -35,7 +35,7 @@ template <class T> class Vec3{
 
         //vector operations
         void normalize(){
-            float magnitude = sqrt( (x*x) + (y*y) + (z*z) );
+            double magnitude = sqrt( (x*x) + (y*y) + (z*z) );
             if(magnitude!=0){
                 x /= magnitude;
                 y /= magnitude;
@@ -138,13 +138,13 @@ template <class T> class Vec3{
             return Vec3(x*v2.x, y*v2.y, z*v2.z);
         }
 
-        void operator *= (float scalar){
+        void operator *= (T scalar){
             x *= scalar;
             y *= scalar;
             z *= scalar;
         }
 
-        Vec3<T> operator * (float scalar){
+        Vec3<T> operator * (T scalar){
             return Vec3(x*scalar, y*scalar, z*scalar);
         }
 
@@ -170,18 +170,18 @@ template <class T> class Vec3{
             }
         }
 
-        void operator /= (float scalar){
+        void operator /= (T scalar){
             if(scalar != 0){
-                x *= scalar;
-                y *= scalar;
-                z *= scalar;
+                x /= scalar;
+                y /= scalar;
+                z /= scalar;
             }
             else{
                 cout << "Vec3<T> / operation not allowed : scalar is equal to 0" << endl;
             }
         }
 
-        Vec3<T> operator / (float scalar){
+        Vec3<T> operator / (T scalar){
             if(scalar != 0){
                 return Vec3(x/scalar, y/scalar, z/scalar);
             }
@@ -211,7 +211,6 @@ template <class T> class Vec3{
         }
 
         void print(){
-            cout << endl;
             cout << "----------" << endl;
             cout << "Vec3 of type " << typeid(T).name() << endl;
             cout << endl;
