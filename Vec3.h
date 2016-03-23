@@ -59,11 +59,11 @@ template <class T> class Vec3{
             return Vec3(newX,newY,newZ);
         }
 
-        T length(){
+        T length() const{
             return sqrt( (x*x) + (y*y) + (z*z));
         }
 
-        T lengthSq(){
+        T lengthSq() const{
             return (x*x + y*y + z*z);
         }
 
@@ -208,6 +208,13 @@ template <class T> class Vec3{
             else{
                 return false;
             }
+        }
+
+        bool operator < (const Vec3<T> v2) const {
+            if(this->lengthSq() < v2.lengthSq()){
+                return true;
+            }
+            return false;
         }
 
         void print(){
